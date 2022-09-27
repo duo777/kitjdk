@@ -12,7 +12,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
 
-import br.com.ifpe.oxefood.servicos.acesso.Usuario;
+import br.com.ifpe.oxefood.modelo.acesso.Usuario;
 
 /**
  * @author Roberto Alencar
@@ -27,14 +27,14 @@ public class OxefoodApplication {
 
 }
 
-@Configuration
-@EnableJpaAuditing
-class DataJpaConfig {
-
-    @Bean
-    public AuditorAware<Usuario> auditor() {
-	return () -> Optional.ofNullable(SecurityContextHolder.getContext()).map(SecurityContext::getAuthentication)
-		.filter(Authentication::isAuthenticated).map(Authentication::getPrincipal).map(Usuario.class::cast);
-    }
-
-}
+//@Configuration
+//@EnableJpaAuditing
+//class DataJpaConfig {
+//
+//    @Bean
+//    public AuditorAware<Usuario> auditor() {
+//	return () -> Optional.ofNullable(SecurityContextHolder.getContext()).map(SecurityContext::getAuthentication)
+//		.filter(Authentication::isAuthenticated).map(Authentication::getPrincipal).map(Usuario.class::cast);
+//    }
+//
+//}

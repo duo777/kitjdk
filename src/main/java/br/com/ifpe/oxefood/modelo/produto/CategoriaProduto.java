@@ -1,4 +1,4 @@
-package br.com.ifpe.oxefood.servicos.produto;
+package br.com.ifpe.oxefood.modelo.produto;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

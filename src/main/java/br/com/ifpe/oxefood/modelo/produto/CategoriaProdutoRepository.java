@@ -1,4 +1,4 @@
-package br.com.ifpe.oxefood.servicos.produto;
+package br.com.ifpe.oxefood.modelo.produto;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package br.com.ifpe.oxefood.servicos.acesso;
+package br.com.ifpe.oxefood.modelo.acesso;
 
 import static java.util.stream.Collectors.toList;
 

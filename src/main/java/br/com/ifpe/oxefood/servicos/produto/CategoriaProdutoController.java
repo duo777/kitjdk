@@ -1,4 +1,4 @@
-package br.com.ifpe.oxefood.api.produto;
+package br.com.ifpe.oxefood.servicos.produto;
 
 import java.net.URI;
 
@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
-import br.com.ifpe.oxefood.servicos.produto.CategoriaProduto;
-import br.com.ifpe.oxefood.servicos.produto.CategoriaProdutoService;
+import br.com.ifpe.oxefood.modelo.produto.CategoriaProduto;
+import br.com.ifpe.oxefood.modelo.produto.CategoriaProdutoService;
 import br.com.ifpe.oxefood.util.entity.GenericController;
 
 /**

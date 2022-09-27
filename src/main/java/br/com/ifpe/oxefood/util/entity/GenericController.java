@@ -8,7 +8,7 @@ import br.com.ifpe.oxefood.util.exception.PreenchimentoException;
  * @author Roberto Alencar
  *
  */
-@CrossOrigin
+//@CrossOrigin
 public class GenericController {
 
     protected void validarPreenchimentoChave(String chave) {

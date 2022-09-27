@@ -1,10 +1,10 @@
-package br.com.ifpe.oxefood.api.produto;
+package br.com.ifpe.oxefood.servicos.produto;
 
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-import br.com.ifpe.oxefood.servicos.produto.CategoriaProduto;
+import br.com.ifpe.oxefood.modelo.produto.CategoriaProduto;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
