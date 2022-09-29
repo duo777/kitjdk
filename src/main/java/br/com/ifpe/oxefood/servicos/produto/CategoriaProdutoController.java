@@ -1,16 +1,14 @@
 package br.com.ifpe.oxefood.servicos.produto;
 
-import java.net.URI;
-
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.util.UriComponentsBuilder;
 
 import br.com.ifpe.oxefood.modelo.produto.CategoriaProduto;
 import br.com.ifpe.oxefood.modelo.produto.CategoriaProdutoService;
@@ -28,15 +26,11 @@ public class CategoriaProdutoController extends GenericController {
     private CategoriaProdutoService categoriaProdutoService;
 
     @PostMapping
-    public ResponseEntity<CategoriaProduto> save(@RequestBody @Valid CategoriaProdutoRequest request, UriComponentsBuilder uriBuilder) {
+    public ResponseEntity<CategoriaProduto> save(@RequestBody @Valid CategoriaProdutoRequest request) {
 
 	validarPreenchimentoChave(request.getChaveEmpresa());
-
 	CategoriaProduto categoriaProduto = categoriaProdutoService.save(request.buildCategoriaProduto());
-	String path = String.format("/api/categoriaproduto/%d", categoriaProduto.getId());
-	URI uri = uriBuilder.path(path).build().toUri();
-
-	return ResponseEntity.created(uri).build();
+	return new ResponseEntity<CategoriaProduto>(categoriaProduto, HttpStatus.CREATED);
     }
 
 }
