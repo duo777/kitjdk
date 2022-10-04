@@ -1,6 +1,5 @@
 package br.com.ifpe.oxefood.util.entity;
 
-import java.io.Serializable;
 import java.time.LocalDate;
 
 import javax.persistence.Column;
@@ -22,7 +21,7 @@ import lombok.Setter;
 @Setter
 @Getter
 @MappedSuperclass
-public abstract class EntidadeAuditavel extends EntidadeNegocio implements Serializable {
+public abstract class EntidadeAuditavel extends EntidadeNegocio {
 
     private static final long serialVersionUID = -8779559168633155010L;
 
