@@ -25,7 +25,7 @@ import lombok.Setter;
 @EqualsAndHashCode(of = { "id" })
 public abstract class EntidadeNegocio implements Serializable {
 
-    private static final long serialVersionUID = 6166022111371021946L;
+    private static final long serialVersionUID = 7321098902737648432L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
