@@ -1,4 +1,4 @@
-package br.com.ifpe.oxefood.modelo.produto;
+package br.com.ifpe.oxefood.modelo.cliente;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -21,31 +21,41 @@ import lombok.Setter;
  *
  */
 @Entity
-@Table(name = "CategoriaProduto")
+@Table(name = "Cliente")
 @Where(clause = "habilitado = true")
 @Builder
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class CategoriaProduto extends EntidadeAuditavel {
+public class Cliente extends EntidadeAuditavel {
 
-    private static final long serialVersionUID = -1313945132507416245L;
-    
-    public static final String LABEL = "Categoria de Produto";
+    private static final long serialVersionUID = 4411577995549704667L;
+
+    public static final String LABEL = "Cliente";
 
     @JsonIgnore
     @NotNull
     @Column(nullable = false)
     private String chaveEmpresa;
 
-    @NotNull
-    @Column(nullable = false, length = 100)
-    private String descricao;
+    @Column
+    private String nome;
 
-    public void updateFrom(CategoriaProduto param) {
+    @Column
+    private String cpf;
 
-	this.setDescricao(param.getDescricao());
+    @Column
+    private String fone;
+
+    @Column
+    private String foneAlternativo;
+
+    public void updateFrom(Cliente param) {
+
+	this.setNome(param.getNome());
+	this.setCpf(param.getCpf());
+	this.setFone(param.getFone());
+	this.setFoneAlternativo(param.getFoneAlternativo());
     }
-
 }

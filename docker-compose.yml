@@ -6,7 +6,7 @@ services:
      restart: always
      environment:
        POSTGRES_PASSWORD: oxefood
-       POSTGRES_DB: oxefood
+       POSTGRES_DB: oxefood-final
      ports:
        - 5432:5432
      volumes:
