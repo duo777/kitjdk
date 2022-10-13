@@ -17,7 +17,7 @@ import br.com.ifpe.oxefood.util.exception.EntityAlreadyExistsException;
  */
 @Service
 public class CategoriaProdutoService extends GenericService {
-    
+
     @Autowired
     private CategoriaProdutoRepository repository;
 
@@ -35,15 +35,18 @@ public class CategoriaProdutoService extends GenericService {
 
 	if (StringUtils.isNotBlank(categoriaParam.getDescricao())) {
 
-	    CategoriaProduto categoria = repository.findByChaveAndDescricao(categoriaParam.getChaveEmpresa(), categoriaParam.getDescricao());
+	    CategoriaProduto categoria = repository.findByChaveAndDescricao(categoriaParam.getChaveEmpresa(),
+		    categoriaParam.getDescricao());
 
-	    if (id == null) { // O id será null quando este método for chamado para validar a inclusão de novas categorias
+	    if (id == null) { // O id será null quando este método for chamado para validar a inclusão de
+			      // novas categorias
 
 		if (categoria != null) {
 		    throw new EntityAlreadyExistsException(CategoriaProduto.LABEL, "Descrição");
 		}
 
-	    } else { // O id NÃO será null quando este método for chamado para validar a alteração de categorias
+	    } else { // O id NÃO será null quando este método for chamado para validar a alteração de
+		     // categorias
 
 		if (categoria != null && categoria.getId() != id) {
 		    throw new EntityAlreadyExistsException(CategoriaProduto.LABEL, "Descrição");

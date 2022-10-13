@@ -29,10 +29,7 @@ public class CategoriaProdutoRequest {
 
     public CategoriaProduto buildCategoriaProduto() {
 
-	return CategoriaProduto.builder()
-		.chaveEmpresa(chaveEmpresa)
-		.descricao(descricao)
-		.build();
+	return CategoriaProduto.builder().chaveEmpresa(chaveEmpresa).descricao(descricao).build();
     }
 
 }

@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 @ResponseStatus(code = HttpStatus.INTERNAL_SERVER_ERROR)
 public class PreenchimentoException extends RuntimeException {
 
-    private static final long serialVersionUID = -1115216621688787838L;
+    private static final long serialVersionUID = 1732331916797615614L;
 
     public static final String MSG_PREENCHIMENTO_OBRIGATORIO = "É necessário informar algum valor para o campo %s.";
     public static final String MSG_CHAVE_NAO_INFORMADA = "Informe a chave da empresa.";
