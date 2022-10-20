@@ -1,5 +1,7 @@
 package br.com.ifpe.oxefood.modelo.produto;
 
+import java.util.List;
+
 import javax.transaction.Transactional;
 
 import org.apache.commons.lang3.StringUtils;
@@ -13,13 +15,24 @@ import br.com.ifpe.oxefood.util.exception.EntityAlreadyExistsException;
  * Classe responsável pelas operações relativas a uma {@link CategoriaProduto}.
  * 
  * @author Roberto Alencar
- *
  */
 @Service
 public class CategoriaProdutoService extends GenericService {
 
     @Autowired
     private CategoriaProdutoRepository repository;
+    
+    @Transactional
+    public CategoriaProduto findById(Long id) {
+
+	return repository.findById(id).get();
+    }
+    
+    @Transactional
+    public List<CategoriaProduto> consultarPorChaveEmpresa(String chaveEmpresa) {
+
+	return repository.findByChaveEmpresaOrderByDescricaoAsc(chaveEmpresa);
+    }
 
     @Transactional
     public CategoriaProduto save(CategoriaProduto categoriaProduto) {

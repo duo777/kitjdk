@@ -7,8 +7,6 @@ import javax.validation.constraints.NotNull;
 
 import org.hibernate.annotations.Where;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import br.com.ifpe.oxefood.util.entity.EntidadeAuditavel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -34,7 +32,6 @@ public class CategoriaProduto extends EntidadeAuditavel {
 
     public static final String LABEL = "Categoria de Produto";
 
-    @JsonIgnore
     @NotNull
     @Column(nullable = false)
     private String chaveEmpresa;

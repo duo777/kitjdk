@@ -1,35 +1,34 @@
-2022-10-13 10:26:43.208  INFO 111236 --- [restartedMain] br.com.ifpe.oxefood.OxefoodApplication   : Starting OxefoodApplication using Java 11.0.16 on roberto-G3-3590 with PID 111236 (/home/roberto/git/oxefood-final/target/classes started by roberto in /home/roberto/git/oxefood-final)
-2022-10-13 10:26:43.212  INFO 111236 --- [restartedMain] br.com.ifpe.oxefood.OxefoodApplication   : No active profile set, falling back to 1 default profile: "default"
-2022-10-13 10:26:43.268  INFO 111236 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2022-10-13 10:26:43.269  INFO 111236 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2022-10-13 10:26:43.994  INFO 111236 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2022-10-13 10:26:44.041  INFO 111236 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 38 ms. Found 2 JPA repository interfaces.
-2022-10-13 10:26:44.544  INFO 111236 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2022-10-13 10:26:44.555  INFO 111236 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2022-10-13 10:26:44.556  INFO 111236 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
-2022-10-13 10:26:44.615  INFO 111236 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2022-10-13 10:26:44.616  INFO 111236 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1347 ms
-2022-10-13 10:26:44.657  INFO 111236 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2022-10-13 10:26:44.746  INFO 111236 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2022-10-13 10:26:44.757  INFO 111236 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:5434/oxefood-manha'
-2022-10-13 10:26:44.905  INFO 111236 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2022-10-13 10:26:44.971  INFO 111236 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.10.Final
-2022-10-13 10:26:45.150  INFO 111236 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2022-10-13 10:26:45.258  INFO 111236 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
-2022-10-13 10:26:45.859  INFO 111236 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2022-10-13 10:26:45.865  INFO 111236 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2022-10-13 10:26:46.287  WARN 111236 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2022-10-13 10:26:47.089  INFO 111236 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2022-10-13 10:26:47.120  INFO 111236 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2022-10-13 10:26:47.131  INFO 111236 --- [restartedMain] br.com.ifpe.oxefood.OxefoodApplication   : Started OxefoodApplication in 4.268 seconds (JVM running for 4.875)
-2022-10-13 10:26:53.616  INFO 111236 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2022-10-13 10:26:53.617  INFO 111236 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2022-10-13 10:26:53.618  INFO 111236 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2022-10-13 10:27:48.000  WARN 111236 --- [http-nio-8080-exec-4] .w.s.m.a.ResponseStatusExceptionResolver : Resolved [br.com.ifpe.oxefood.util.exception.EntityAlreadyExistsException: Já existe um(a) Categoria de Produto cadastrado(a) com esse(a) Descrição.]
-2022-10-13 10:28:02.459  INFO 111236 --- [RMI TCP Connection(11)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
-2022-10-13 10:28:02.462  INFO 111236 --- [RMI TCP Connection(11)-127.0.0.1] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2022-10-13 10:28:02.464  INFO 111236 --- [RMI TCP Connection(11)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
-2022-10-13 10:28:02.467  WARN 111236 --- [RMI TCP Connection(11)-127.0.0.1] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [HikariPool-1 housekeeper] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+2022-10-20 13:55:50.246  INFO 184686 --- [restartedMain] br.com.ifpe.oxefood.OxefoodApplication   : Starting OxefoodApplication using Java 11.0.16 on roberto-G3-3590 with PID 184686 (/home/roberto/git/oxefood-final/target/classes started by roberto in /home/roberto/git/oxefood-final)
+2022-10-20 13:55:50.249  INFO 184686 --- [restartedMain] br.com.ifpe.oxefood.OxefoodApplication   : No active profile set, falling back to 1 default profile: "default"
+2022-10-20 13:55:50.288  INFO 184686 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-10-20 13:55:50.288  INFO 184686 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-10-20 13:55:50.869  INFO 184686 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-10-20 13:55:50.905  INFO 184686 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 29 ms. Found 2 JPA repository interfaces.
+2022-10-20 13:55:51.466  INFO 184686 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-10-20 13:55:51.476  INFO 184686 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-10-20 13:55:51.477  INFO 184686 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-10-20 13:55:51.536  INFO 184686 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-10-20 13:55:51.536  INFO 184686 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1247 ms
+2022-10-20 13:55:51.578  INFO 184686 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-10-20 13:55:51.652  INFO 184686 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-10-20 13:55:51.662  INFO 184686 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:5432/oxefood-final'
+2022-10-20 13:55:51.795  INFO 184686 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-10-20 13:55:51.824  INFO 184686 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.10.Final
+2022-10-20 13:55:51.928  INFO 184686 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-10-20 13:55:52.022  INFO 184686 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2022-10-20 13:55:52.752  INFO 184686 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-10-20 13:55:52.760  INFO 184686 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-10-20 13:55:53.195  WARN 184686 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-10-20 13:55:53.946  INFO 184686 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-10-20 13:55:53.975  INFO 184686 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-10-20 13:55:53.987  INFO 184686 --- [restartedMain] br.com.ifpe.oxefood.OxefoodApplication   : Started OxefoodApplication in 4.073 seconds (JVM running for 4.616)
+2022-10-20 13:56:35.523  INFO 184686 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-10-20 13:56:35.524  INFO 184686 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-10-20 13:56:35.525  INFO 184686 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-10-20 13:59:39.957  INFO 184686 --- [RMI TCP Connection(13)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2022-10-20 13:59:39.961  INFO 184686 --- [RMI TCP Connection(13)-127.0.0.1] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-10-20 13:59:39.963  INFO 184686 --- [RMI TCP Connection(13)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2022-10-20 13:59:39.966  WARN 184686 --- [RMI TCP Connection(13)-127.0.0.1] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [HikariPool-1 housekeeper] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
  java.base@11.0.16/jdk.internal.misc.Unsafe.park(Native Method)
  java.base@11.0.16/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:234)
  java.base@11.0.16/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2123)
@@ -39,41 +38,40 @@
  java.base@11.0.16/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1114)
  java.base@11.0.16/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
  java.base@11.0.16/java.lang.Thread.run(Thread.java:834)
-2022-10-13 10:28:02.475  INFO 111236 --- [RMI TCP Connection(11)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2022-10-13 10:28:02.478  INFO 111236 --- [RMI TCP Connection(11)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2022-10-13 10:28:02.483  INFO 111236 --- [RMI TCP Connection(11)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2022-10-13 16:17:54.241  INFO 105604 --- [restartedMain] br.com.ifpe.oxefood.OxefoodApplication   : Starting OxefoodApplication using Java 11.0.16 on roberto-G3-3590 with PID 105604 (/home/roberto/git/oxefood-final/target/classes started by roberto in /home/roberto/git/oxefood-final)
-2022-10-13 16:17:54.242  INFO 105604 --- [restartedMain] br.com.ifpe.oxefood.OxefoodApplication   : No active profile set, falling back to 1 default profile: "default"
-2022-10-13 16:17:54.285  INFO 105604 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2022-10-13 16:17:54.285  INFO 105604 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2022-10-13 16:17:54.824  INFO 105604 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2022-10-13 16:17:54.867  INFO 105604 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 36 ms. Found 2 JPA repository interfaces.
-2022-10-13 16:17:55.401  INFO 105604 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2022-10-13 16:17:55.409  INFO 105604 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2022-10-13 16:17:55.410  INFO 105604 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
-2022-10-13 16:17:55.457  INFO 105604 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2022-10-13 16:17:55.457  INFO 105604 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1171 ms
-2022-10-13 16:17:55.489  INFO 105604 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2022-10-13 16:17:55.566  INFO 105604 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2022-10-13 16:17:55.575  INFO 105604 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:5432/oxefood-final'
-2022-10-13 16:17:55.693  INFO 105604 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2022-10-13 16:17:55.729  INFO 105604 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.10.Final
-2022-10-13 16:17:55.845  INFO 105604 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2022-10-13 16:17:55.925  INFO 105604 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
-2022-10-13 16:17:56.603  INFO 105604 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2022-10-13 16:17:56.610  INFO 105604 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2022-10-13 16:17:57.138  WARN 105604 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2022-10-13 16:17:57.857  INFO 105604 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2022-10-13 16:17:57.937  INFO 105604 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2022-10-13 16:17:57.990  INFO 105604 --- [restartedMain] br.com.ifpe.oxefood.OxefoodApplication   : Started OxefoodApplication in 4.053 seconds (JVM running for 4.581)
-2022-10-13 16:23:38.497  INFO 105604 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2022-10-13 16:23:38.498  INFO 105604 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2022-10-13 16:23:38.500  INFO 105604 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
-2022-10-13 16:23:44.454  WARN 105604 --- [http-nio-8080-exec-4] .w.s.m.a.ResponseStatusExceptionResolver : Resolved [br.com.ifpe.oxefood.util.exception.EntityAlreadyExistsException: Já existe um(a) Categoria de Produto cadastrado(a) com esse(a) Descrição.]
-2022-10-13 16:24:29.886  INFO 105604 --- [RMI TCP Connection(16)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
-2022-10-13 16:24:29.890  INFO 105604 --- [RMI TCP Connection(16)-127.0.0.1] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2022-10-13 16:24:29.891  INFO 105604 --- [RMI TCP Connection(16)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
-2022-10-13 16:24:29.894  WARN 105604 --- [RMI TCP Connection(16)-127.0.0.1] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [HikariPool-1 housekeeper] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+2022-10-20 13:59:39.974  INFO 184686 --- [RMI TCP Connection(13)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-10-20 13:59:39.977  INFO 184686 --- [RMI TCP Connection(13)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-10-20 13:59:39.984  INFO 184686 --- [RMI TCP Connection(13)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-10-20 13:59:48.661  INFO 188230 --- [restartedMain] br.com.ifpe.oxefood.OxefoodApplication   : Starting OxefoodApplication using Java 11.0.16 on roberto-G3-3590 with PID 188230 (/home/roberto/git/oxefood-final/target/classes started by roberto in /home/roberto/git/oxefood-final)
+2022-10-20 13:59:48.663  INFO 188230 --- [restartedMain] br.com.ifpe.oxefood.OxefoodApplication   : No active profile set, falling back to 1 default profile: "default"
+2022-10-20 13:59:48.707  INFO 188230 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-10-20 13:59:48.708  INFO 188230 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-10-20 13:59:49.211  INFO 188230 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-10-20 13:59:49.251  INFO 188230 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 34 ms. Found 2 JPA repository interfaces.
+2022-10-20 13:59:49.795  INFO 188230 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-10-20 13:59:49.803  INFO 188230 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-10-20 13:59:49.803  INFO 188230 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-10-20 13:59:49.847  INFO 188230 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-10-20 13:59:49.848  INFO 188230 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1139 ms
+2022-10-20 13:59:49.878  INFO 188230 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-10-20 13:59:49.942  INFO 188230 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-10-20 13:59:49.953  INFO 188230 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:5432/oxefood-final'
+2022-10-20 13:59:50.076  INFO 188230 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-10-20 13:59:50.112  INFO 188230 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.10.Final
+2022-10-20 13:59:50.229  INFO 188230 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-10-20 13:59:50.303  INFO 188230 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2022-10-20 13:59:50.753  INFO 188230 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-10-20 13:59:50.759  INFO 188230 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-10-20 13:59:51.179  WARN 188230 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-10-20 13:59:51.792  INFO 188230 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-10-20 13:59:51.821  INFO 188230 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-10-20 13:59:51.830  INFO 188230 --- [restartedMain] br.com.ifpe.oxefood.OxefoodApplication   : Started OxefoodApplication in 3.475 seconds (JVM running for 4.018)
+2022-10-20 13:59:52.363  INFO 188230 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-10-20 13:59:52.364  INFO 188230 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-10-20 13:59:52.366  INFO 188230 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2022-10-20 14:25:32.331  INFO 188230 --- [RMI TCP Connection(34)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2022-10-20 14:25:32.335  INFO 188230 --- [RMI TCP Connection(34)-127.0.0.1] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-10-20 14:25:32.338  INFO 188230 --- [RMI TCP Connection(34)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2022-10-20 14:25:32.341  WARN 188230 --- [RMI TCP Connection(34)-127.0.0.1] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [HikariPool-1 housekeeper] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
  java.base@11.0.16/jdk.internal.misc.Unsafe.park(Native Method)
  java.base@11.0.16/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:234)
  java.base@11.0.16/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2123)
@@ -83,6 +81,6 @@
  java.base@11.0.16/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1114)
  java.base@11.0.16/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
  java.base@11.0.16/java.lang.Thread.run(Thread.java:834)
-2022-10-13 16:24:29.903  INFO 105604 --- [RMI TCP Connection(16)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2022-10-13 16:24:29.905  INFO 105604 --- [RMI TCP Connection(16)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2022-10-13 16:24:29.909  INFO 105604 --- [RMI TCP Connection(16)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-10-20 14:25:32.349  INFO 188230 --- [RMI TCP Connection(34)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-10-20 14:25:32.351  INFO 188230 --- [RMI TCP Connection(34)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-10-20 14:25:32.356  INFO 188230 --- [RMI TCP Connection(34)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
