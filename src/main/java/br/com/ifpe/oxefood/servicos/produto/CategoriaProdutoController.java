@@ -40,7 +40,7 @@ public class CategoriaProdutoController extends GenericController {
 
 	validarPreenchimentoChave(request.getChaveEmpresa());
 	CategoriaProduto categoriaProduto = categoriaProdutoService.save(request.buildCategoriaProduto());
-	return new ResponseEntity<CategoriaProduto>(categoriaProduto, HttpStatus.CREATED);
+	    return new ResponseEntity<CategoriaProduto>(categoriaProduto, HttpStatus.CREATED);
     }
     
     @ApiOperation(value = "Serviço responsável por obter uma categoria de produto referente ao Id passado na URL.")
@@ -54,14 +54,14 @@ public class CategoriaProdutoController extends GenericController {
     @GetMapping("/{id}")
     public CategoriaProduto get(@PathVariable Long id) {
 
-	return categoriaProdutoService.findById(id);
+	    return categoriaProdutoService.findById(id);
     }
     
     @ApiOperation(value = "Serviço responsável por obter uma lista de categorias de produto da empresa passado na URL.")
     @GetMapping("/porempresa/{chaveEmpresa}")
     public List<CategoriaProduto> consultarPorChaveEmpresa(@PathVariable String chaveEmpresa) {
 	
-	return categoriaProdutoService.consultarPorChaveEmpresa(chaveEmpresa);
+	    return categoriaProdutoService.consultarPorChaveEmpresa(chaveEmpresa);
     }
     
     @PutMapping("/{id}")
@@ -69,7 +69,7 @@ public class CategoriaProdutoController extends GenericController {
     public ResponseEntity<CategoriaProduto> update(@PathVariable("id") Long id, @RequestBody CategoriaProdutoRequest request) {
 
 	categoriaProdutoService.update(id, request.buildCategoriaProduto());
-	return ResponseEntity.ok().build();
+	    return ResponseEntity.ok().build();
     }
     
     @DeleteMapping("/{id}")
@@ -77,7 +77,7 @@ public class CategoriaProdutoController extends GenericController {
     public ResponseEntity<Void> delete(@PathVariable Long id) {
 
 	categoriaProdutoService.delete(id);
-	return ResponseEntity.noContent().build();
+	    return ResponseEntity.noContent().build();
     }
 
 }
