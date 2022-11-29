@@ -69,7 +69,7 @@ public class CategoriaProdutoController extends GenericController {
     public ResponseEntity<CategoriaProduto> update(@PathVariable("id") Long id, @RequestBody CategoriaProdutoRequest request) {
 
 	categoriaProdutoService.update(id, request.buildCategoriaProduto());
-	    return ResponseEntity.ok().build();
+	return ResponseEntity.ok().build();
     }
     
     @DeleteMapping("/{id}")
@@ -77,7 +77,7 @@ public class CategoriaProdutoController extends GenericController {
     public ResponseEntity<Void> delete(@PathVariable Long id) {
 
 	categoriaProdutoService.delete(id);
-	    return ResponseEntity.noContent().build();
+	return ResponseEntity.noContent().build();
     }
 
 }

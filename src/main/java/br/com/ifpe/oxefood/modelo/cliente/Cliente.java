@@ -1,7 +1,11 @@
 package br.com.ifpe.oxefood.modelo.cliente;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
@@ -39,6 +43,9 @@ public class Cliente extends EntidadeAuditavel {
     @Column(nullable = false)
     private String chaveEmpresa;
 
+    @OneToMany(mappedBy = "cliente", orphanRemoval = true, fetch = FetchType.EAGER)
+    private List<EnderecoCliente> enderecos;
+
     @Column
     private String nome;
 
@@ -58,4 +65,5 @@ public class Cliente extends EntidadeAuditavel {
 	this.setFone(param.getFone());
 	this.setFoneAlternativo(param.getFoneAlternativo());
     }
+    
 }
