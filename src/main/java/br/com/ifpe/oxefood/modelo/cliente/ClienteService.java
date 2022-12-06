@@ -1,6 +1,7 @@
 package br.com.ifpe.oxefood.modelo.cliente;
 
 import java.util.List;
+import java.util.Optional;
 
 import javax.transaction.Transactional;
 
@@ -8,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import br.com.ifpe.oxefood.util.entity.GenericService;
+import br.com.ifpe.oxefood.util.exception.EntidadeNaoEncontradaException;
 
 /**
  * Classe responsável pelas operações relativos a um {@link Cliente}.
@@ -31,7 +33,13 @@ public class ClienteService extends GenericService {
     @Transactional
     public Cliente obterClientePorID(Long id) {
 
-	return repository.findById(id).get();
+	Optional<Cliente> consulta = repository.findById(id);
+	
+	if (consulta.isPresent()) {
+	    return consulta.get();
+	} else {
+	    throw new EntidadeNaoEncontradaException("Cliente", id);
+	}
     }
 
     @Transactional

@@ -7,7 +7,6 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.validation.constraints.NotNull;
 
 import org.hibernate.annotations.Where;
 
@@ -39,17 +38,16 @@ public class Cliente extends EntidadeAuditavel {
     public static final String LABEL = "Cliente";
 
     @JsonIgnore
-    @NotNull
     @Column(nullable = false)
     private String chaveEmpresa;
 
     @OneToMany(mappedBy = "cliente", orphanRemoval = true, fetch = FetchType.EAGER)
     private List<EnderecoCliente> enderecos;
 
-    @Column
+    @Column(nullable = false, length = 100)
     private String nome;
 
-    @Column
+    @Column(unique = true)
     private String cpf;
 
     @Column
