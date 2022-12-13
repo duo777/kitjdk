@@ -31,6 +31,8 @@ public class ClienteRequest {
     @Length(max = 100, message = "O Nome deverá ter no máximo {max} caracteres")
     private String nome;
 
+    @NotBlank(message = "O Email é de preenchimento obrigatório")
+    private String email;
     
     @NotNull(message = "O CPF é de preenchimento obrigatório")
     @NotBlank(message = "O CPF é de preenchimento obrigatório")
@@ -47,6 +49,7 @@ public class ClienteRequest {
 	return Cliente.builder()
 		.chaveEmpresa(chaveEmpresa)
 		.nome(nome)
+		.email(email)
 		.cpf(cpf)
 		.fone(fone)
 		.foneAlternativo(foneAlternativo)

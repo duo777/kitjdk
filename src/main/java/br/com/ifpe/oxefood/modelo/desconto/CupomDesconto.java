@@ -1,5 +1,7 @@
 package br.com.ifpe.oxefood.modelo.desconto;
 
+import java.time.LocalDateTime;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
@@ -43,6 +45,12 @@ public class CupomDesconto extends EntidadeAuditavel {
     @Column
     private int quantidadeUso;
     
+    @Column
+    private LocalDateTime dataInicioVigencia;
+
+    @Column
+    private LocalDateTime dataFimVigencia;
+    
     public void updateFrom(CupomDesconto param) {
 
 	this.setChaveEmpresa(param.getChaveEmpresa());
@@ -51,6 +59,8 @@ public class CupomDesconto extends EntidadeAuditavel {
 	this.setValorDesconto(param.getValorDesconto());
 	this.setValorMinimoPedidoPermitido(param.getValorMinimoPedidoPermitido());
 	this.setQuantidadeUso(param.getQuantidadeUso());
+	this.setDataInicioVigencia(param.getDataInicioVigencia());
+	this.setDataFimVigencia(param.getDataFimVigencia());
     }
 
 }

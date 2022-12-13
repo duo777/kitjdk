@@ -40,6 +40,9 @@ public class Cliente extends EntidadeAuditavel {
     @JsonIgnore
     @Column(nullable = false)
     private String chaveEmpresa;
+    
+    @Column
+    private String email;
 
     @OneToMany(mappedBy = "cliente", orphanRemoval = true, fetch = FetchType.EAGER)
     private List<EnderecoCliente> enderecos;
@@ -58,6 +61,7 @@ public class Cliente extends EntidadeAuditavel {
 
     public void updateFrom(Cliente param) {
 
+	this.setEmail(param.getEmail());
 	this.setNome(param.getNome());
 	this.setCpf(param.getCpf());
 	this.setFone(param.getFone());
