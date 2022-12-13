@@ -85,7 +85,7 @@ public class EmailService {
 
 	try {
 
-	    helper.setFrom(new InternetAddress("not.reply@oxefood.com.br"));
+	    helper.setFrom(new InternetAddress("not.reply@delifacil.com.br"));
 	    helper.setTo(to);
 	    helper.setSubject(subject);
 	    helper.setText(new String(content.getBytes(), StandardCharsets.ISO_8859_1), html);
