@@ -1,6 +1,5 @@
 package br.com.ifpe.oxefood.servicos.acesso;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -19,10 +18,11 @@ import org.springframework.web.bind.annotation.RestController;
 import br.com.ifpe.oxefood.modelo.acesso.Usuario;
 import br.com.ifpe.oxefood.modelo.acesso.UsuarioService;
 import br.com.ifpe.oxefood.security.jwt.JwtTokenProvider;
+import br.com.ifpe.oxefood.util.entity.GenericController;
 
 @RestController
 @RequestMapping("/api/login")
-public class AuthenticationController {
+public class AuthenticationController extends GenericController {
     
     @Autowired
     private UsuarioService usuarioService;
@@ -46,15 +46,7 @@ public class AuthenticationController {
     
     private Map<Object, Object> doLoginAppCliente(AuthenticationRequest data) {
 	
-	authenticationManager.authenticate(
-		    new UsernamePasswordAuthenticationToken(
-			    data.getUsername(),
-			    data.getPassword(), 
-			    new ArrayList<>())
-		    );
-	
 	authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(data.getUsername(), data.getPassword()));
-	
 	return doLogin(this.usuarioService.findByUsername(data.getUsername()));
     }
     
