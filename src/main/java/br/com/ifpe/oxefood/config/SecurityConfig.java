@@ -12,6 +12,7 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
@@ -64,10 +65,19 @@ public class SecurityConfig {
 	 	.authenticationEntryPoint(authenticationEntryPoint).and().authorizeRequests()
 
 	 	.antMatchers(AUTH_WHITELIST).permitAll()
-	 	.antMatchers(HttpMethod.POST, "/api/cliente").permitAll()
 	 	.antMatchers(HttpMethod.POST, "/api/login/signin").permitAll()
+	 	
+	 	.antMatchers(HttpMethod.POST, "/api/cliente").permitAll() //Libera o cadastro de cliente para o cadastro de usuário
+	 	.antMatchers(HttpMethod.POST, "/api/empresa").permitAll() //Libera o cadastro de empresa para o cadastro de usuário
         
-        	.anyRequest().hasAnyAuthority(Usuario.ROLE_CLIENTE, Usuario.ROLE_EMPRESA)
+	 	//Configuração de autorizações de acesso para Produto
+	 	
+	 	.antMatchers(HttpMethod.POST, "/api/produto").hasAnyAuthority(Usuario.ROLE_EMPRESA_ADMIN, Usuario.ROLE_EMPRESA_USER) //Cadastro de produto
+	 	.antMatchers(HttpMethod.PUT, "/api/produto").hasAnyAuthority(Usuario.ROLE_EMPRESA_ADMIN, Usuario.ROLE_EMPRESA_USER) //Alteração de produto
+	 	.antMatchers(HttpMethod.DELETE, "/api/produto").hasAnyAuthority(Usuario.ROLE_EMPRESA_ADMIN) //Exclusão de produto
+	 	.antMatchers(HttpMethod.GET, "/api/produto/").hasAnyAuthority(Usuario.ROLE_CLIENTE, Usuario.ROLE_EMPRESA_ADMIN, Usuario.ROLE_EMPRESA_USER) //Consulta de produto
+	 	
+        	.anyRequest().hasAnyAuthority(Usuario.ROLE_CLIENTE, Usuario.ROLE_EMPRESA_ADMIN, Usuario.ROLE_EMPRESA_USER)
         	.and().addFilterBefore(
         		new JwtTokenAuthenticationFilter(jwtTokenProvider),
         		UsernamePasswordAuthenticationFilter.class);

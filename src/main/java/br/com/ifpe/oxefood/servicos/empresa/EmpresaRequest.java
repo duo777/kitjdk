@@ -1,5 +1,11 @@
 package br.com.ifpe.oxefood.servicos.empresa;
 
+import java.util.Arrays;
+
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+
+import br.com.ifpe.oxefood.modelo.acesso.Usuario;
 import br.com.ifpe.oxefood.modelo.empresa.Empresa;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -27,11 +33,18 @@ public class EmpresaRequest {
     private String fone;
 
     private String foneAlternativo;
+    
+    private String email;
 
+    private String password;
+    
+    private String perfil;
+    
     public Empresa buildEmpresa() {
 
 	Empresa empresa = Empresa.builder()
 		.chave(chave)
+		.usuario(buildUsuario())
 		.site(site)
 		.cnpj(cnpj)
 		.inscricaoEstadual(inscricaoEstadual)
@@ -42,6 +55,14 @@ public class EmpresaRequest {
 		.build();
 
 	return empresa;
+    }
+    
+    public Usuario buildUsuario() {
+	
+	return Usuario.builder()
+		.username(email)
+		.password(password)
+		.build();
     }
 
 }
