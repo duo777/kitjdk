@@ -25,5 +25,11 @@ public class EmpresaService extends GenericService {
 	super.preencherCamposAuditoria(empresa);
 	return repository.save(empresa);
     }
+    
+    @Transactional
+    public Empresa findEmpresaByChave(String chave) {
+
+	return repository.findByChave(chave);
+    }
 
 }

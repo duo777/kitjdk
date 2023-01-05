@@ -14,11 +14,15 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.util.UriComponentsBuilder;
 
 import br.com.ifpe.oxefood.modelo.produto.CategoriaProdutoService;
 import br.com.ifpe.oxefood.modelo.produto.Produto;
 import br.com.ifpe.oxefood.modelo.produto.ProdutoService;
+import br.com.ifpe.oxefood.servicos.arquivo.ArquivoService;
 import br.com.ifpe.oxefood.util.entity.GenericController;
 import io.swagger.annotations.ApiOperation;
 
@@ -35,6 +39,9 @@ public class ProdutoController extends GenericController {
     
     @Autowired
     private CategoriaProdutoService categoriaProdutoService;
+    
+    @Autowired
+    private ArquivoService arquivoService;
 
     @ApiOperation(value = "Serviço responsável por salvar um produto no sistema.")
     @PostMapping
@@ -79,4 +86,16 @@ public class ProdutoController extends GenericController {
 	produtoService.delete(id);
 	return ResponseEntity.noContent().build();
     }
+    
+    @PostMapping("/{id}/imagem")
+    @ApiOperation(value = "Rota responsável por adicionar uma imagem ao produto.")
+    public ResponseEntity<Void> addImage(@PathVariable("id") Long idProduto, @RequestParam(value = "imagem", required = true) MultipartFile imagem) {
+
+	Produto produto = produtoService.findById(idProduto);
+	String filepath = arquivoService.uploadToS3(imagem,  produto.getChaveEmpresa());
+	produtoService.createImage(produto.getId(), filepath);
+
+	return ResponseEntity.noContent().build();
+    }
+    
 }

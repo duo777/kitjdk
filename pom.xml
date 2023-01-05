@@ -77,7 +77,21 @@
 		<!-- Fim das dependências relacionadas ao controle de acesso:  -->
 		
 		
+		<!-- Início das dependências da Amazon S3 --> 
 		
+        <dependency>
+		    <groupId>com.amazonaws</groupId>
+		    <artifactId>aws-java-sdk</artifactId>
+			<version>1.11.1000</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>2.4</version>
+		</dependency>
+		
+		<!-- Fim das dependências da Amazon S3 -->
 		
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

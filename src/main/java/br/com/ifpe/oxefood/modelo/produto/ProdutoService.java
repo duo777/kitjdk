@@ -64,4 +64,20 @@ public class ProdutoService extends GenericService {
 
 	repository.save(produto);
     }
+    
+    @Transactional
+    public String createImage(Long produtoId, String imagem) {
+
+	Produto produto = this.findById(produtoId);
+
+	ImagemProduto imagemProduto = ImagemProduto.builder().titulo(imagem).produto(produto).build();
+
+	imagemProduto.setHabilitado(Boolean.TRUE);
+	imagemProdutoRepository.saveAndFlush(imagemProduto);
+
+	produto.adicionarImagem(imagemProduto);
+	update(produto);
+
+	return imagem;
+    }
 }
