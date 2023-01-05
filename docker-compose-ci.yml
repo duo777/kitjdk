@@ -1,0 +1,24 @@
+version: "3"
+services:
+
+   web:
+     image: openjdk:11-jdk
+     restart: always
+     ports: 
+       - 8082:8082
+     environment:
+       "JAVA_OPTIONS": "-Xms2024m"
+       "TZ": "America/Recife"
+     command: bash -c "cd /home && ./mvnw spring-boot:run"
+     
+   db:
+     image: postgres:9.6
+     restart: always
+     environment:
+       POSTGRES_PASSWORD: oxefood
+       POSTGRES_DB: oxefood-final
+     ports:
+       - 5432:5432
+     volumes:
+       - ./postgres-data:/bitnami/postgresql/data
+   
