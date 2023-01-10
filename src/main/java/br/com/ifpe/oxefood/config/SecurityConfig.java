@@ -67,6 +67,7 @@ public class SecurityConfig {
 	 	.antMatchers(HttpMethod.POST, "/api/login/signin").permitAll()
 	 	
 	 	.antMatchers(HttpMethod.POST, "/api/cliente").permitAll() //Libera o cadastro de cliente para o cadastro de usuário
+	 	.antMatchers("/api/cliente/*").permitAll()
 	 	.antMatchers(HttpMethod.POST, "/api/empresa").permitAll() //Libera o cadastro de empresa para o cadastro de usuário
         
 	 	//Configuração de autorizações de acesso para Produto

@@ -1,5 +1,6 @@
 package br.com.ifpe.oxefood.modelo.cliente;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -50,6 +51,9 @@ public class Cliente extends EntidadeAuditavel {
 
     @Column(nullable = false, length = 100)
     private String nome;
+    
+    @Column
+    private LocalDate dataNascimento;
 
     @Column(unique = true)
     private String cpf;
@@ -61,8 +65,10 @@ public class Cliente extends EntidadeAuditavel {
     private String foneAlternativo;
 
     public void updateFrom(Cliente param) {
-
+	
+	this.getUsuario().setUsername(param.getUsuario().getUsername());
 	this.setNome(param.getNome());
+	this.setDataNascimento(param.getDataNascimento());
 	this.setCpf(param.getCpf());
 	this.setFone(param.getFone());
 	this.setFoneAlternativo(param.getFoneAlternativo());

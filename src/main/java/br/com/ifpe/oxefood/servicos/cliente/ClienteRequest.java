@@ -1,5 +1,6 @@
 package br.com.ifpe.oxefood.servicos.cliente;
 
+import java.time.LocalDate;
 import java.util.Arrays;
 
 import javax.validation.constraints.Email;
@@ -8,6 +9,8 @@ import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.br.CPF;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 import br.com.ifpe.oxefood.modelo.acesso.Usuario;
 import br.com.ifpe.oxefood.modelo.cliente.Cliente;
@@ -42,6 +45,9 @@ public class ClienteRequest {
     @NotBlank(message = "O CPF é de preenchimento obrigatório")
     @CPF
     private String cpf;
+    
+    @JsonFormat(pattern = "dd/MM/yyyy")
+    private LocalDate dataNascimento;
 
     @Length(min = 8, max = 20, message = "O campo Fone tem que ter entre {min} e {max} caracteres")
     private String fone;
@@ -54,6 +60,7 @@ public class ClienteRequest {
 		.usuario(buildUsuario())
 		.nome(nome)
 		.cpf(cpf)
+		.dataNascimento(dataNascimento)
 		.fone(fone)
 		.foneAlternativo(foneAlternativo)
 		.build();
