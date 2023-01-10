@@ -26,10 +26,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class ClienteRequest {
 
-    @NotNull(message = "O Chave Empresa é de preenchimento obrigatório")
-    @NotBlank(message = "O Chave Empresa é de preenchimento obrigatório")
-    private String chaveEmpresa;
-
     @NotNull(message = "O Nome é de preenchimento obrigatório")
     @NotBlank(message = "O Nome é de preenchimento obrigatório")
     @Length(max = 100, message = "O Nome deverá ter no máximo {max} caracteres")
@@ -55,7 +51,6 @@ public class ClienteRequest {
     public Cliente buildCliente() {
 
 	return Cliente.builder()
-		.chaveEmpresa(chaveEmpresa)
 		.usuario(buildUsuario())
 		.nome(nome)
 		.cpf(cpf)

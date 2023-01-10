@@ -14,8 +14,6 @@ import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
 import org.hibernate.annotations.Where;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import br.com.ifpe.oxefood.modelo.acesso.Usuario;
 import br.com.ifpe.oxefood.util.entity.EntidadeAuditavel;
 import lombok.AllArgsConstructor;
@@ -45,10 +43,6 @@ public class Cliente extends EntidadeAuditavel {
     @ManyToOne
     @JoinColumn(nullable = false)
     private Usuario usuario;
-
-    @JsonIgnore
-    @Column(nullable = false)
-    private String chaveEmpresa;
 
     @OneToMany(mappedBy = "cliente", orphanRemoval = true, fetch = FetchType.EAGER)
     @Fetch(FetchMode.SUBSELECT)

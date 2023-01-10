@@ -1,7 +1,5 @@
 package br.com.ifpe.oxefood.servicos.cliente;
 
-import java.util.List;
-
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -54,13 +52,6 @@ public class ClienteController extends GenericController {
     public Cliente obterClientePorID(@PathVariable Long id) {
 
 	return clienteService.obterClientePorID(id);
-    }
-    
-    @ApiOperation(value = "Serviço responsável por obter uma lista de clientes da empresa passado na URL.")
-    @GetMapping("/porempresa/{chaveEmpresa}")
-    public List<Cliente> consultarPorChaveEmpresa(@PathVariable String chaveEmpresa) {
-	
-	return clienteService.consultarPorChaveEmpresa(chaveEmpresa);
     }
     
     @PutMapping("/{id}")
