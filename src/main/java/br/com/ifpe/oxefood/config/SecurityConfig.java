@@ -64,19 +64,20 @@ public class SecurityConfig {
 	 	.authenticationEntryPoint(authenticationEntryPoint).and().authorizeRequests()
 
 	 	.antMatchers(AUTH_WHITELIST).permitAll()
-	 	.antMatchers(HttpMethod.POST, "/api/login/signin").permitAll()
 	 	
-	 	.antMatchers(HttpMethod.POST, "/api/cliente").permitAll() //Libera o cadastro de cliente para o cadastro de usuário
+	 	.antMatchers("/api/cliente").permitAll()
 	 	.antMatchers("/api/cliente/*").permitAll()
-	 	.antMatchers(HttpMethod.POST, "/api/empresa").permitAll() //Libera o cadastro de empresa para o cadastro de usuário
+	 	
+	 	.antMatchers(HttpMethod.POST, "/api/login").permitAll()
+	 	.antMatchers(HttpMethod.POST, "/api/empresa").permitAll()
+	 	
+	 	//Configuração de autorizações de acesso para Categoria de Produto
+	 	
+	 	.antMatchers(HttpMethod.POST, "/api/categoriaproduto").hasAnyAuthority(Usuario.ROLE_EMPRESA_ADMIN, Usuario.ROLE_EMPRESA_USER) //Cadastro de produto
+	 	.antMatchers(HttpMethod.PUT, "/api/categoriaproduto/*").hasAnyAuthority(Usuario.ROLE_EMPRESA_ADMIN) //Alteração de produto
+	 	.antMatchers(HttpMethod.DELETE, "/api/categoriaproduto").hasAnyAuthority(Usuario.ROLE_EMPRESA_ADMIN) //Exclusão de produto
+	 	.antMatchers(HttpMethod.GET, "/api/categoriaproduto/").hasAnyAuthority(Usuario.ROLE_CLIENTE, Usuario.ROLE_EMPRESA_ADMIN, Usuario.ROLE_EMPRESA_USER) //Consulta de produto
         
-	 	//Configuração de autorizações de acesso para Produto
-	 	
-	 	.antMatchers(HttpMethod.POST, "/api/produto").hasAnyAuthority(Usuario.ROLE_EMPRESA_ADMIN, Usuario.ROLE_EMPRESA_USER) //Cadastro de produto
-	 	.antMatchers(HttpMethod.PUT, "/api/produto").hasAnyAuthority(Usuario.ROLE_EMPRESA_ADMIN, Usuario.ROLE_EMPRESA_USER) //Alteração de produto
-	 	.antMatchers(HttpMethod.DELETE, "/api/produto").hasAnyAuthority(Usuario.ROLE_EMPRESA_ADMIN) //Exclusão de produto
-	 	.antMatchers(HttpMethod.GET, "/api/produto/").hasAnyAuthority(Usuario.ROLE_CLIENTE, Usuario.ROLE_EMPRESA_ADMIN, Usuario.ROLE_EMPRESA_USER) //Consulta de produto
-	 	
         	.anyRequest().hasAnyAuthority(Usuario.ROLE_CLIENTE, Usuario.ROLE_EMPRESA_ADMIN, Usuario.ROLE_EMPRESA_USER)
         	.and().addFilterBefore(
         		new JwtTokenAuthenticationFilter(jwtTokenProvider),

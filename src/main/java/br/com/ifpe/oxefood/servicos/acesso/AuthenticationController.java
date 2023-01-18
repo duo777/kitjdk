@@ -33,7 +33,7 @@ public class AuthenticationController extends GenericController {
     @Autowired
     private JwtTokenProvider jwtTokenProvider;
 
-    @PostMapping("/signin")
+    @PostMapping
     @ResponseStatus(HttpStatus.OK)
     public Map<Object, Object> signin(@RequestBody AuthenticationRequest data) {
 
